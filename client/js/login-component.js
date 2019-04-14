@@ -1,5 +1,5 @@
 Vue.component(`login-component`, {
-  props:['isLogin'],
+  props:['isLogin','email'],
   data: function () {
     return {
       login: {
@@ -16,12 +16,10 @@ Vue.component(`login-component`, {
           password: this.login.password
         })
         .then(({data}) => {
-          console.log(data)
           this.login.email = ''
           this.login.password = ''
           localStorage.setItem('token', data.token)
           localStorage.setItem('email', data.email)
-          this.email = localStorage.getItem('image')
           this.$emit('change') 
         })
         .catch((err) => {

@@ -190,6 +190,7 @@ let app = new Vue({
     },
     loginChange()  {
       this.isLogin = true
+      this.email = localStorage.getItem('email')
     },
     changeCurrentPage(param) {
       this.currentPage = param
