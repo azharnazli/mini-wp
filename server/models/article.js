@@ -13,11 +13,7 @@ const ArticleSchema = new mongoose.Schema({
     type : mongoose.Schema.Types.ObjectId,
     ref : 'User'
   },
-  imgPath : String,
-  comment : [{
-    type : mongoose.Schema.Types.ObjectId,
-    ref : 'User'
-  }]
+  imgPath : String
 })
 
 ArticleSchema.pre('findOneAndUpdate', function(next){
